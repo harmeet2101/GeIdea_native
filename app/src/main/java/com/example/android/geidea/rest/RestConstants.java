@@ -9,5 +9,4 @@ public class RestConstants {
     public static final String USER_INFO_END_POINT = "users/{id}";
 
 
-
 }

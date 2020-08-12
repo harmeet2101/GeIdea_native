@@ -1,11 +1,18 @@
 package com.example.android.geidea.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Data {
 
+    @SerializedName("id")
     private long id;
+    @SerializedName("email")
     private String email;
+    @SerializedName("first_name")
     private String firstName;
+    @SerializedName("last_name")
     private String lastName;
+    @SerializedName("avatar")
     private String avatar;
 
     public long getID() { return id; }

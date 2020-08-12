@@ -1,14 +1,22 @@
 package com.example.android.geidea.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Users {
 
+    @SerializedName("page")
     private long page;
+    @SerializedName("per_page")
     private long perPage;
+    @SerializedName("total")
     private long total;
+    @SerializedName("total_pages")
     private long totalPages;
+    @SerializedName("data")
     private List<Data> data;
+    @SerializedName("ad")
     private Ad ad;
 
     public long getPage() { return page; }
