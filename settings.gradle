@@ -1,0 +1,2 @@
+rootProject.name='GeIdea_native'
+include ':app'
