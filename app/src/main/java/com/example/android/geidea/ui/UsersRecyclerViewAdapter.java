@@ -1,6 +1,8 @@
 package com.example.android.geidea.ui;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,26 +150,41 @@ public class UsersRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
 
     }
 
-    public class DataViewHolder extends RecyclerView.ViewHolder{
+    public class DataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView idTextview;
         private TextView firstNameTextview;
         private TextView lastNameTextview;
+        private View mainView;
+        private Data data;
 
         public DataViewHolder(@NonNull View itemView) {
             super(itemView);
             idTextview = (TextView) itemView.findViewById(R.id.idTextview);
             firstNameTextview = (TextView) itemView.findViewById(R.id.fnTextview);
             lastNameTextview = (TextView) itemView.findViewById(R.id.lnTextview);
+            mainView = itemView.findViewById(R.id.mainView);
+            mainView.setOnClickListener(this);
         }
 
         public void updateViews(Data data){
 
-            idTextview.setText("Id: "+data.getID());
+            this.data = data;
+            idTextview.setText("Id: "+data.getId());
             firstNameTextview.setText(data.getFirstName()+" "+data.getLastName());
             lastNameTextview.setText(data.getEmail());
         }
 
+        @Override
+        public void onClick(View v) {
+
+            Bundle bundle = new Bundle();
+            bundle.putLong("id",data.getId());
+            Intent intent = new Intent(context,UserDetailsActivity.class);
+            intent.putExtras(bundle);
+            context.startActivity(intent);
+
+        }
     }
 
 }

@@ -1,23 +1,52 @@
 package com.example.android.geidea.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
+
+import com.example.android.geidea.room.DataConvertor;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Entity(tableName = "users")
 public class Users {
 
+    @PrimaryKey(autoGenerate = true)
+    public int id;
     @SerializedName("page")
+    @ColumnInfo
     private long page;
     @SerializedName("per_page")
+    @ColumnInfo
     private long perPage;
     @SerializedName("total")
+    @ColumnInfo
     private long total;
     @SerializedName("total_pages")
+    @ColumnInfo
     private long totalPages;
-    @SerializedName("data")
+
+    @TypeConverters(DataConvertor.class)
     private List<Data> data;
-    @SerializedName("ad")
+    @ColumnInfo
+    @Ignore
     private Ad ad;
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public long getPage() { return page; }
     public void setPage(long value) { this.page = value; }
@@ -40,7 +69,8 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" +
-                "page=" + page +
+                "id=" + id +
+                ", page=" + page +
                 ", perPage=" + perPage +
                 ", total=" + total +
                 ", totalPages=" + totalPages +

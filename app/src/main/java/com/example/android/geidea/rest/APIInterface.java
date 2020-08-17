@@ -3,8 +3,6 @@ package com.example.android.geidea.rest;
 import com.example.android.geidea.model.UserDetails;
 import com.example.android.geidea.model.Users;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

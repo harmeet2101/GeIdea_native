@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.android.geidea.model.Users;
-import com.example.android.geidea.repository.remote.AllUsersRepository;
+import com.example.android.geidea.repository.AllUsersRepository;
 
 public class UsersViewModel extends AndroidViewModel {
 
@@ -18,8 +18,9 @@ public class UsersViewModel extends AndroidViewModel {
     public UsersViewModel(@NonNull Application application) {
         super(application);
         usersMutableLiveData = new MutableLiveData<>();
-        allUsersRepository = new AllUsersRepository();
+        allUsersRepository = new AllUsersRepository(application);
     }
+
 
     public LiveData<Users> getAllUsers(){
 

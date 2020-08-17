@@ -2,38 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/mainView">
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/countTextview"
+
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/idTextview"
-        android:text="12345"
-        android:textSize="18sp"
-        android:layout_marginTop="10dp"
+        android:text="User Id: "
+        android:textSize="22sp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fnTextview"
-        android:text="FirstName"
-        android:textSize="18sp"
+        android:text="FirstName: "
+        android:textSize="22sp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lnTextview"
-        android:text="Last Name"
-        android:textSize="18sp"
+        android:text="Last Name: "
+        android:textSize="22sp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"/>
 
+
+
 </LinearLayout>
-
-
-
-
-
